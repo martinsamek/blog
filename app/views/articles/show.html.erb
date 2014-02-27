@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazov clanku:</strong>
+  <h1><%= @article.title %></h1>
+</p>
+
+<p>
+  <strong>Obsah:</strong><br>
+  <%= @article.content %>
+</p>
+
+<h2>Autor:</h2>
+<p>
+  Meno : <%= @article.author.name %>
+</p>
+<p>
+  Vek : <%= @article.author.age %>
+</p>
+<p>
+  email : <%= @article.author.email %>
+</p>
+
+<hr>
+
+<h2>Komentare</h2>
+<% @article.comments.each do |comment| %>
+    <p>
+      <%= comment.created_at.to_s(:short) %> napisal <strong><%= comment.commenter %></strong>:
+      <q><%= comment.comment_body %></q>
+    </p>
+<% end %>
+
+<hr>
+
+<h2>Pridat komentar:</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :commenter %><br />
+      <%= f.text_field :commenter %>
+    </div>
+    <div class="field">
+      <%= f.label :comment_body %><br />
+      <%= f.text_area :comment_body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
