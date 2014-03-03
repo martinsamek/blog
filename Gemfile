@@ -46,4 +46,4 @@ end
 gem 'execjs'
 gem 'therubyracer'
 gem 'debugger'
-gem 'jquery-rails'
+gem 'bootstrap-sass', '2.3.2.0'

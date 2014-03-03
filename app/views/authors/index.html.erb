@@ -1,18 +1,15 @@
-<h1>Listing authors</h1>
+<h1>Zoznam autorov</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
+  <div class="CSSTableGenerator" >
+  <table>
+    <td>Meno :</td>
+    <td>Vek :</td>
+    <td>e-mail :</td>
+    <td></td>
+    <td></td>
+    <td></td>
     <% @authors.each do |author| %>
       <tr>
         <td><%= author.name %></td>
@@ -23,9 +20,11 @@
         <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+  </table>
+  </div>
+
 
 <br>
 
-<%= link_to 'New Author', new_author_path %>
+<%= link_to 'Novy autor', new_author_path, class: "btn btn-normal btn-primary" %>
+

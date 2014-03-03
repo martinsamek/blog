@@ -14,5 +14,5 @@
 //= require jquery_ujs
 
 $(function() {
-    $( "#accordion" ).accordion();
+    $( "#tabs" ).tabs();
 });
