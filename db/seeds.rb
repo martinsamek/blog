@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do
+
+  Author.create(:name => Faker::Name.name,
+                :age => rand(15..99),
+                :email => Faker::Internet.email)
+
+end
+
+15.times do
+  Article.create(:title => Faker::Lorem.sentence(1),
+                 :content => Faker::Lorem.paragraph(rand(5..20)),
+                 :author_id => rand(1..10))
+end

@@ -1,6 +1,6 @@
 <h1>Zoznam clankov</h1>
 
-
+<!--
 <div class="CSSTableGenerator">
   <table>
     <td>Nazov clanku</td>
@@ -22,7 +22,25 @@
   </tbody>
 </table>
 </div>
+-->
 
+<% @articles.each do |article| %>
+    <div class="row-fluid">
+      <div class="span12">
+        <div id="nadpis">
+            <hr>
+            <h1><%= article.author.name %> : <q><%= article.title %></q></h1>
+        </div>
+        <div id="datum">
+            <%= article.author.created_at.strftime "%d.%m.%Y %H:%M:%S" %>
+        </div>
+        <div id="obsah">
+            <%=  article.content %>
+        </div>
+      </div>
+
+    </div>
+<% end %>
 <br>
 
 <%= link_to 'Novy clanok', new_article_path, class: "btn btn-default btn-primary" %>
