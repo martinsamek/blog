@@ -1,5 +1,7 @@
 After clonnig from github run in terminal :
 
+cd blog
+
 rake db:setup
 
 rails s
