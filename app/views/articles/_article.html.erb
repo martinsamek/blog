@@ -1,0 +1,20 @@
+<% @articles.each do |article| %>
+    <div class="row-fluid">
+      <div class="span12">
+        <div id="nadpis">
+          <h1><strong><%= article.author.name %> :</strong> <%= article.title %></h1>
+        </div>
+        <div id="datum">
+          <%= article.author.created_at.strftime "%d.%m.%Y %H:%M:%S" %>
+        </div>
+        <div id="obsah" class="more">
+
+          <%=  article.content %>
+
+        </div>
+        <hr>
+      </div>
+
+    </div>
+<% end %>
+

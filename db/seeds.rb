@@ -14,8 +14,8 @@
 
 end
 
-15.times do
+5.times do
   Article.create(:title => Faker::Lorem.sentence(1),
-                 :content => Faker::Lorem.paragraph(rand(5..20)),
+                 :content => Faker::Lorem.paragraph(rand(20..500)),
                  :author_id => rand(1..10))
 end
