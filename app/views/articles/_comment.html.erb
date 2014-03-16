@@ -1,0 +1,21 @@
+    <%= debug comments %>
+    <p>
+      <%= comment.created_at.strftime "%d.%m.%Y %H:%M:%S" %> napisal <strong><%= comment.commenter %></strong>:
+      <q><%= comment.comment_body %></q>
+    </p>
+
+    <hr>
+    Pridat komentar <br><br>
+
+    <%= fields_for comments.build do |f| %>
+        <div class="field">
+          Komentator : <br><%= f.text_field :commenter %>
+        </div>
+        <div class="field">
+          Komentar : <br><%= f.text_area :comment_body %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+    <hr>

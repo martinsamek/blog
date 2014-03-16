@@ -1,4 +1,4 @@
-<% @articles.each do |article| %>
+
     <div class="row-fluid">
       <div class="span12">
         <div id="nadpis">
@@ -11,10 +11,12 @@
 
           <%=  article.content %>
 
+          <hr>
+          <%= debug  article.comments %>
+          <%= render :partial => "comment", :collection => article.comments, :locals => { :comments => article.comments } %>
         </div>
-        <hr>
+
       </div>
 
     </div>
-<% end %>
 

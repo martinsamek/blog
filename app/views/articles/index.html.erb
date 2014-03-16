@@ -1,30 +1,6 @@
 <h1>Zoznam clankov</h1>
 
-<!--
-<div class="CSSTableGenerator">
-  <table>
-    <td>Nazov clanku</td>
-    <td>Autor</td>
-    <td>Datum vytvorenia</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <% @articles.each do |article| %>
-      <tr class="<%= cycle('oddrow', 'evenrow') -%>">
-        <td><%= article.title %></td>
-        <td><%= article.author.name %></td>
-        <td><%= article.author.created_at.strftime "%d.%m.%Y %H:%M:%S" %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
--->
-
-<%= render partial: "article" %>
+<%= render :partial => "article", :collection => @articles %>
 
 <%= link_to 'Novy clanok', new_article_path, class: "btn btn-default btn-primary" %>
 

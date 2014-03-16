@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 $(function() {
 var showChar = 350;
 var ellipsestext = "...";
 var moretext = "viac";
 var lesstext = "menej";
+
 $('.more').each(function() {
     var content = $(this).html();
 

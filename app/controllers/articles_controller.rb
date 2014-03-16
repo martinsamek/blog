@@ -4,8 +4,10 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-
     @articles = Article.all
+
+
+
   end
 
   # GET /articles/1
@@ -13,7 +15,7 @@ class ArticlesController < ApplicationController
   def show
 
     @article = Article.find(params[:id])
-  #  @author = Author.find(@article.id)
+
   end
 
   # GET /articles/new
