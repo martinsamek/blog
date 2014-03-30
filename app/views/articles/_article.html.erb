@@ -12,6 +12,7 @@
           <%=  article.content %>
 
           <hr>
+          <h2>Komentare :</h2>
 
           <%= render :partial => "comment", :collection => article.comments %>
           <%= render :partial => "comment_form", :locals => { :article => article } %>
