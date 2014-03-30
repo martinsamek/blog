@@ -1,7 +1,9 @@
 Blog::Application.routes.draw do
 
   get '/home',    :to => 'home#index'
-  resources :authors
+  resources :authors do
+    resources :comments
+  end
 
   resources :articles do
     resources :author
